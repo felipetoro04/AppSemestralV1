@@ -40,6 +40,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.LogButton:
+                //comentario
 
                 String mail = email.getText().toString();
                 String password = pass.getText().toString();
