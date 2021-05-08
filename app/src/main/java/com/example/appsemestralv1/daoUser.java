@@ -85,7 +85,7 @@ public class  daoUser {
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 do {
-                    if (cursor.getString(2).equals(email) && cursor.getString(3).equals(password)) {
+                    if (cursor.getString(4).equals(email) && cursor.getString(7).equals(password)) {
                         success = true;
                         break;
                     }
