@@ -14,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity  implements  View.OnClickListener {
     public Button loginbutton;
+    public Button closeSesion;
     public Button registerButton;
     public ImageButton callFamily;
     public TextView textView_Email;
@@ -37,7 +38,13 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
         loginbutton.setOnClickListener(this);
         registerButton = (Button) findViewById(R.id.RegisterButton);
         registerButton.setOnClickListener(this);
+        closeSesion = (Button) findViewById(R.id.CloseSesion);
+        closeSesion.setOnClickListener(this);
+
+
         callFamily=  (ImageButton) findViewById(R.id.CallFamily);
+
+
         dao = new daoUser(this);
         Intent i = getIntent();
         if (i.hasExtra("id")){
@@ -46,8 +53,19 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
             userId = bundle.getInt("id");
 
             if (userId>=0){
+                closeSesion.setVisibility(View.VISIBLE);
                 callFamily.setVisibility(View.VISIBLE);
+                registerButton.setVisibility(View.GONE);
+                loginbutton.setVisibility(View.GONE);
+            }else if(userId==-1){
+                    closeSesion.setVisibility(View.GONE);
+                    callFamily.setVisibility(View.GONE);
+                registerButton.setVisibility(View.VISIBLE);
+                loginbutton.setVisibility(View.VISIBLE);
+
+
             }
+
         }
 
 
@@ -69,6 +87,12 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
                     case R.id.RegisterButton:
                         Intent i2 = new Intent(MainActivity.this, SignIn.class);
                         startActivity(i2);
+                        finish();
+                        break;
+                    case R.id.CloseSesion:
+                        Intent i = new Intent(MainActivity.this, MainActivity.class);
+                        userId = -1;
+                        startActivity(i);
                         finish();
                         break;
 

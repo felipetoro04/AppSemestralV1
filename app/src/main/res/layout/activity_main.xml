@@ -100,6 +100,24 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/button_circle_two"
             android:text="LOGIN"
+            android:visibility="visible"
+            android:textColor="@color/cardview_dark_background" />
+
+
+
+        <Button
+            android:id="@+id/CloseSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="54dp"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="580dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginRight="54dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/button_circle_two"
+            android:text="CERRAR SESION"
+            android:visibility="gone"
             android:textColor="@color/cardview_dark_background" />
 
 
@@ -115,6 +133,7 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/button_circle_two"
             android:text="REGISTER"
+            android:visibility="visible"
             android:textColor="@color/cardview_dark_background" />
 
         <TextView
