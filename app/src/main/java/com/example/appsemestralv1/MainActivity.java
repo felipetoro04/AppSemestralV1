@@ -3,6 +3,7 @@ package com.example.appsemestralv1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
     daoUser dao;
     int userId = -1;
 
+    MediaPlayer mp;
+    Button btn_Sound;
+
+
 
 
 
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         textView_Email = findViewById(R.id.textView_email);
 
 
@@ -44,6 +50,14 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
 
         callFamily=  (ImageButton) findViewById(R.id.CallFamily);
 
+        btn_Sound = (Button) findViewById(R.id.btn_Sound);
+        mp = MediaPlayer.create(this, R.raw.soundd);
+        btn_Sound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mp.start();
+            }
+        });
 
         dao = new daoUser(this);
         Intent i = getIntent();

@@ -45,7 +45,7 @@
             />
 
         <Button
-            android:id="@+id/Sound"
+            android:id="@+id/btn_Sound"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="54dp"
@@ -55,9 +55,8 @@
             android:layout_marginRight="54dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/button_circle_two"
-            android:text="RUIDO MOLESTO"
-            android:textColor="@color/cardview_dark_background"
-            />
+            android:text="@string/btn_Sound"
+            android:textColor="@color/cardview_dark_background" />
 
         <Button
             android:id="@+id/HistoryTrack"
