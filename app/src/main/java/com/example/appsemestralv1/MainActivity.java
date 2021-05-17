@@ -76,8 +76,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
                     callFamily.setVisibility(View.GONE);
                 registerButton.setVisibility(View.VISIBLE);
                 loginbutton.setVisibility(View.VISIBLE);
-
-
+// hola como estas //
             }
 
         }
