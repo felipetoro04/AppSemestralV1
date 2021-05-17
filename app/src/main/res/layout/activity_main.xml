@@ -51,8 +51,8 @@
             android:layout_marginStart="54dp"
             android:layout_marginLeft="54dp"
             android:layout_marginTop="160dp"
-            android:layout_marginEnd="54dp"
-            android:layout_marginRight="54dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginRight="130dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/button_circle_two"
             android:text="@string/btn_Sound"
@@ -148,10 +148,18 @@
             android:visibility="gone"
             />
 
-
-
-
-
+        <Button
+            android:id="@+id/button_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="290dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginRight="54dp"
+            android:layout_marginBottom="16dp"
+            android:text="||"
+            android:visibility="gone" />
 
 
     </RelativeLayout>
