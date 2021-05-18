@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
         Btn_Stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Btn_Stop.setVisibility(View.GONE);
+                Btn_Stop.setVisibility(View.INVISIBLE);
                 mp.stop();
             }
 
