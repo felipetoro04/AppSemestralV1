@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     tools:context=".Login"
     android:background="#202732">
-
+//Este boton de cancelar Login
     <Button
         android:id="@+id/CancelLoginButton"
         android:layout_width="match_parent"
