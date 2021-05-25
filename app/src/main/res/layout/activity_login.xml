@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Login"
-    android:background="#202732">
-
+    tools:context=".Login">
+//Este boton de cancelar Login
+    //Este no es el boton de cancelar Login , Ariel se equivoco
     <Button
         android:id="@+id/CancelLoginButton"
         android:layout_width="match_parent"
@@ -37,9 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText

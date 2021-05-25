@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
     public Button loginbutton;
     public Button closeSesion;
     public Button registerButton;
+    public Button Btn_Stop;
     public ImageButton callFamily;
     public TextView textView_Email;
     public Button historyTrack;
@@ -41,21 +42,40 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
         historyTrack.setOnClickListener(this);
         loginbutton = (Button) findViewById(R.id.LoginButton);
         loginbutton.setOnClickListener(this);
+
         registerButton = (Button) findViewById(R.id.RegisterButton);
         registerButton.setOnClickListener(this);
         closeSesion = (Button) findViewById(R.id.CloseSesion);
         closeSesion.setOnClickListener(this);
-
-
-        callFamily=  (ImageButton) findViewById(R.id.CallFamily);
+        Btn_Stop= (Button) findViewById(R.id.button_stop);
 
         btn_Sound = (Button) findViewById(R.id.btn_Sound);
+        callFamily=  (ImageButton) findViewById(R.id.CallFamily);
+
+
         mp = MediaPlayer.create(this, R.raw.soundd);
+
+
+
+
         btn_Sound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Btn_Stop.setVisibility(View.VISIBLE);
+
                 mp.start();
             }
+
+        });
+
+
+        Btn_Stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Btn_Stop.setVisibility(View.INVISIBLE);
+                mp.stop();
+            }
+
         });
 
         dao = new daoUser(this);
@@ -75,7 +95,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
                     callFamily.setVisibility(View.GONE);
                 registerButton.setVisibility(View.VISIBLE);
                 loginbutton.setVisibility(View.VISIBLE);
-// hola como estas //
+
             }
 
         }
