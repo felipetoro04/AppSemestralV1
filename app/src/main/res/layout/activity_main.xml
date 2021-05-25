@@ -45,7 +45,7 @@
             />
 
         <Button
-            android:id="@+id/btn_Sound"
+            android:id="@+id/Btn_Sound"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="54dp"

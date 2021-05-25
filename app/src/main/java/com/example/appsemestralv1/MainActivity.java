@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
     public Button loginbutton;
     public Button closeSesion;
     public Button registerButton;
-    public Button Btn_Stop;
+    public Button btn_Sound;
     public ImageButton callFamily;
     public TextView textView_Email;
     public Button historyTrack;
@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
     int userId = -1;
 
     MediaPlayer mp;
-    Button btn_Sound;
 
 
     @Override
@@ -47,52 +46,31 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
         registerButton.setOnClickListener(this);
         closeSesion = (Button) findViewById(R.id.CloseSesion);
         closeSesion.setOnClickListener(this);
-        Btn_Stop= (Button) findViewById(R.id.button_stop);
 
-        btn_Sound = (Button) findViewById(R.id.btn_Sound);
-        callFamily=  (ImageButton) findViewById(R.id.CallFamily);
+
+        btn_Sound = (Button) findViewById(R.id.Btn_Sound);
+        btn_Sound.setOnClickListener(this);
+        callFamily = (ImageButton) findViewById(R.id.CallFamily);
 
 
         mp = MediaPlayer.create(this, R.raw.soundd);
 
 
-
-
-        btn_Sound.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Btn_Stop.setVisibility(View.VISIBLE);
-
-                mp.start();
-            }
-
-        });
-
-
-        Btn_Stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Btn_Stop.setVisibility(View.INVISIBLE);
-                mp.stop();
-            }
-
-        });
-
         dao = new daoUser(this);
         Intent i = getIntent();
-        if (i.hasExtra("id")){
+        if (i.hasExtra("id")) {
             Bundle bundle = getIntent().getExtras();
 
             userId = bundle.getInt("id");
 
-            if (userId>=0){
+            if (userId >= 0) {
                 closeSesion.setVisibility(View.VISIBLE);
                 callFamily.setVisibility(View.VISIBLE);
                 registerButton.setVisibility(View.GONE);
                 loginbutton.setVisibility(View.GONE);
-            }else if(userId==-1){
-                    closeSesion.setVisibility(View.GONE);
-                    callFamily.setVisibility(View.GONE);
+            } else if (userId == -1) {
+                closeSesion.setVisibility(View.GONE);
+                callFamily.setVisibility(View.GONE);
                 registerButton.setVisibility(View.VISIBLE);
                 loginbutton.setVisibility(View.VISIBLE);
 
@@ -101,54 +79,44 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
         }
 
 
-
-
-
     }
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.LoginButton:
-                    Intent i3 = new Intent(MainActivity.this, Login.class);
-                    startActivity(i3);
-                    finish();
-                    break;
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.LoginButton:
+                Intent i3 = new Intent(MainActivity.this, Login.class);
+                startActivity(i3);
+                finish();
+                break;
 
 
-                    case R.id.RegisterButton:
-                        Intent i2 = new Intent(MainActivity.this, SignIn.class);
-                        startActivity(i2);
-                        finish();
-                        break;
-                    case R.id.CloseSesion:
-                        Intent i = new Intent(MainActivity.this, MainActivity.class);
-                        userId = -1;
-                        startActivity(i);
-                        finish();
-                        break;
+            case R.id.RegisterButton:
+                Intent i2 = new Intent(MainActivity.this, SignIn.class);
+                startActivity(i2);
+                finish();
+                break;
+            case R.id.CloseSesion:
+                Intent i = new Intent(MainActivity.this, MainActivity.class);
+                userId = -1;
+                startActivity(i);
+                finish();
+                break;
 
-                    case R.id.HistoryTrack:
-                        Intent i4 = new Intent(MainActivity.this, HistorialUbicaciones.class);
-                        startActivity(i4);
-                        finish();
-                        break;
-
-
-
+            case R.id.HistoryTrack:
+                Intent i4 = new Intent(MainActivity.this, HistorialUbicaciones.class);
+                startActivity(i4);
+                finish();
+                break;
+            case R.id.Btn_Sound:
+                if (mp.isPlaying()) {
+                    mp.pause();
+                } else {
+                    mp.start();
                 }
-
-            }
-
-
-
-
-
-
-
-
-
-
+        }
     }
+}
 
 
     ;
