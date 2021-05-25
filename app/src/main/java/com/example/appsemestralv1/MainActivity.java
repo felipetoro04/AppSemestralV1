@@ -19,14 +19,12 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
     public Button registerButton;
     public ImageButton callFamily;
     public TextView textView_Email;
+    public Button historyTrack;
     daoUser dao;
     int userId = -1;
 
     MediaPlayer mp;
     Button btn_Sound;
-
-
-
 
 
     @Override
@@ -39,7 +37,8 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
         textView_Email = findViewById(R.id.textView_email);
 
 
-
+        historyTrack = (Button) findViewById(R.id.HistoryTrack);
+        historyTrack.setOnClickListener(this);
         loginbutton = (Button) findViewById(R.id.LoginButton);
         loginbutton.setOnClickListener(this);
         registerButton = (Button) findViewById(R.id.RegisterButton);
@@ -96,7 +95,6 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
                     break;
 
 
-
                     case R.id.RegisterButton:
                         Intent i2 = new Intent(MainActivity.this, SignIn.class);
                         startActivity(i2);
@@ -106,6 +104,12 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
                         Intent i = new Intent(MainActivity.this, MainActivity.class);
                         userId = -1;
                         startActivity(i);
+                        finish();
+                        break;
+
+                    case R.id.HistoryTrack:
+                        Intent i4 = new Intent(MainActivity.this, HistorialUbicaciones.class);
+                        startActivity(i4);
                         finish();
                         break;
 
