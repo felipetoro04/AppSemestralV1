@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,10 +33,36 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         dao = new daoUser(this);
         saveButton.setOnClickListener(this);
         cancelButton.setOnClickListener(this);
+
     }
+
+    /*
+    saveButton.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            validarCorreo(email);
+
+        }
+    });
+
+     */
+
+    private boolean validarCorreo(EditText email){
+        String UserMail = email.getText().toString();
+
+        if(!UserMail.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(UserMail).matches()){
+            Toast.makeText(this, "Validacion de correo exitosa", Toast.LENGTH_SHORT).show();
+            return true;
+        } else{
+            Toast.makeText(this, "Correo invalido", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
 
     @Override
     public  void onClick(View v){
+        validarCorreo(email);
         switch (v.getId()) {
             case R.id.SaveButton:
                 User user = new User();
@@ -56,6 +83,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                 user.setFonoContact(UserFonoContact);
                 user.setPassword(UserPassword);
 
+
                 if(!user.isNull()) {
                     Toast.makeText(this,"Complete todos los campos", Toast.LENGTH_LONG).show();
                 } else if (dao.createUser(user)){
@@ -70,14 +98,17 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
                 break;
 
-                case R.id.CancelSignButton:
-                    Intent i2 = new Intent(SignIn.this, MainActivity.class);
-                    startActivity(i2);
-                    finish();
+            case R.id.CancelSignButton:
+                Intent i2 = new Intent(SignIn.this, MainActivity.class);
+                startActivity(i2);
+                finish();
 
         }
     }
 }
+
+
+
 
 
 
