@@ -44,19 +44,15 @@
             android:textColor="@color/cardview_dark_background"
             />
 
-        <Button
+        <ImageButton
             android:id="@+id/Btn_Sound"
-            android:layout_width="152dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="54dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_marginLeft="54dp"
             android:layout_marginTop="160dp"
-            android:layout_marginEnd="230dp"
-            android:layout_marginRight="230dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginRight="54dp"
             android:background="@drawable/button_circle_two"
-            android:text="@string/btn_Sound"
-            android:textColor="@color/cardview_dark_background" />
+            android:src="@drawable/play"/>
 
 
 
@@ -151,18 +147,7 @@
             android:visibility="gone"
             />
 
-        <Button
-            android:id="@+id/button_stop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="290dp"
-            android:layout_marginLeft="380dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginEnd="54dp"
-            android:layout_marginRight="54dp"
-            android:layout_marginBottom="16dp"
-            android:text="||"
-            android:visibility="invisible" />
+
 s
 
     </RelativeLayout>

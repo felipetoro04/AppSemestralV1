@@ -9,15 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity  implements  View.OnClickListener {
     public Button loginbutton;
     public Button closeSesion;
     public Button registerButton;
-    public Button btn_Sound;
+    public ImageButton btn_Sound;
     public ImageButton callFamily;
     public TextView textView_Email;
     public Button historyTrack;
@@ -48,7 +45,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
         closeSesion.setOnClickListener(this);
 
 
-        btn_Sound = (Button) findViewById(R.id.Btn_Sound);
+        btn_Sound = (ImageButton) findViewById(R.id.Btn_Sound);
         btn_Sound.setOnClickListener(this);
         callFamily = (ImageButton) findViewById(R.id.CallFamily);
 
@@ -86,19 +83,23 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
         switch (v.getId()) {
             case R.id.LoginButton:
                 Intent i3 = new Intent(MainActivity.this, Login.class);
+                mp.pause();
                 startActivity(i3);
                 finish();
+
                 break;
 
 
             case R.id.RegisterButton:
                 Intent i2 = new Intent(MainActivity.this, SignIn.class);
+                mp.pause();
                 startActivity(i2);
                 finish();
                 break;
             case R.id.CloseSesion:
                 Intent i = new Intent(MainActivity.this, MainActivity.class);
                 userId = -1;
+                mp.pause();
                 startActivity(i);
                 finish();
                 break;
@@ -106,14 +107,19 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
             case R.id.HistoryTrack:
                 Intent i4 = new Intent(MainActivity.this, HistorialUbicaciones.class);
                 startActivity(i4);
+                mp.pause();
                 finish();
+
                 break;
             case R.id.Btn_Sound:
-                if (mp.isPlaying()) {
+                if(mp.isPlaying()){
+                    btn_Sound.setImageResource(R.drawable.play);
                     mp.pause();
                 } else {
                     mp.start();
+                    btn_Sound.setImageResource(R.drawable.pause);
                 }
+
         }
     }
 };
