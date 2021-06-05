@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity  implements  View.OnClickListener {
@@ -18,6 +20,14 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
     public ImageButton callFamily;
     public TextView textView_Email;
     public Button historyTrack;
+
+
+
+
+
+
+
+
     daoUser dao;
     int userId = -1;
 
@@ -74,6 +84,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
             }
 
         }
+
 
 
     }
