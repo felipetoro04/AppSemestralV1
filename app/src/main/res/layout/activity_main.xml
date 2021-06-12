@@ -56,9 +56,22 @@
             android:layout_height="50dp"
             android:layout_marginLeft="54dp"
             android:layout_marginTop="160dp"
-            android:layout_marginRight="54dp"
+            android:layout_marginRight="250dp"
             android:background="@drawable/button_circle_two"
             android:src="@drawable/play"/>
+
+        <Button
+            android:id="@+id/Btn_Track"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginRight="54dp"
+            android:background="@drawable/button_circle_two"
+            android:text="TRACK"
+            android:textColor="@color/black"/>
+
+
 
 
 
@@ -84,9 +97,9 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginStart="105dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_marginLeft="105dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="360dp"
             android:layout_marginEnd="105dp"
             android:layout_marginRight="105dp"
             android:layout_marginBottom="16dp"
@@ -153,8 +166,30 @@
             android:visibility="gone"
             />
 
+        <TextView
+            android:id="@+id/TVcoordenadas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="16dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:text="Coordenadas"/>
 
-s
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coordenadas de la base de datos"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="16dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"/>
+
 
     </RelativeLayout>
 
