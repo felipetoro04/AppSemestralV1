@@ -56,7 +56,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="54dp"
             android:layout_marginTop="160dp"
-            android:layout_marginRight="250dp"
+            android:layout_marginRight="260dp"
             android:background="@drawable/button_circle_two"
             android:src="@drawable/play"/>
 
@@ -68,7 +68,7 @@
             android:layout_marginTop="160dp"
             android:layout_marginRight="54dp"
             android:background="@drawable/button_circle_two"
-            android:text="TRACK"
+            android:text="GUARDAR COORDENADA"
             android:textColor="@color/black"/>
 
 
