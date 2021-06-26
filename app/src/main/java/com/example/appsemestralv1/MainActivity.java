@@ -14,6 +14,7 @@ import android.location.LocationListener;
 
 import android.media.MediaPlayer;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
     public TextView textView_Email;
     public Button historyTrack;
     public Button btn_Track;
+    public User user;
+    public Button callPolice;
     daoUser dao;
     int userId = -1;
     MediaPlayer mp;
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity  implements  View.OnClickLis
     public TextView Coordenadas;
     FusedLocationProviderClient fusedLocationProviderClient;
 String coordenadaText="";
-
+//String phone=
 
 
 
@@ -74,11 +77,13 @@ String coordenadaText="";
         Coordenadas = findViewById(R.id.TVcoordenadas);
         textView_Email = findViewById(R.id.textView_email);
 
+        callPolice = (Button) findViewById(R.id.CallPolice);
+        callPolice.setOnClickListener(this);
 
         historyTrack = (Button) findViewById(R.id.HistoryTrack);
         historyTrack.setOnClickListener(this);
-        loginbutton = (Button) findViewById(R.id.LoginButton);
-        loginbutton.setOnClickListener(this);
+        //loginbutton = (Button) findViewById(R.id.LoginButton);
+        //loginbutton.setOnClickListener(this);
 
         registerButton = (Button) findViewById(R.id.RegisterButton);
         registerButton.setOnClickListener(this);
@@ -89,6 +94,7 @@ String coordenadaText="";
         btn_Sound = (ImageButton) findViewById(R.id.Btn_Sound);
         btn_Sound.setOnClickListener(this);
         callFamily = (ImageButton) findViewById(R.id.CallFamily);
+        callFamily.setOnClickListener(this);
         dao2 = new daoUbication(this);
         btn_Track = (Button) findViewById(R.id.Btn_Track);
         btn_Track.setOnClickListener(this);
@@ -105,12 +111,12 @@ String coordenadaText="";
 
             if (userId >= 0) {
                 closeSesion.setVisibility(View.VISIBLE);
-                callFamily.setVisibility(View.VISIBLE);
+                //callFamily.setVisibility(View.VISIBLE);
                 registerButton.setVisibility(View.GONE);
                 loginbutton.setVisibility(View.GONE);
             } else if (userId == -1) {
                 closeSesion.setVisibility(View.GONE);
-                callFamily.setVisibility(View.GONE);
+                //callFamily.setVisibility(View.GONE);
                 registerButton.setVisibility(View.VISIBLE);
                 loginbutton.setVisibility(View.VISIBLE);
 
@@ -154,10 +160,6 @@ String coordenadaText="";
                         dao2.createUbication(ubication);
                         Toast.makeText(getApplicationContext(),"Coordenadas ingresadas", Toast.LENGTH_LONG).show();
                         };
-
-
-                } else  {
-                    Toast.makeText(getApplicationContext(),"www",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -198,14 +200,14 @@ String coordenadaText="";
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.LoginButton:
+            /*case R.id.LoginButton:
                 Intent i3 = new Intent(MainActivity.this, Login.class);
                 mp.pause();
                 startActivity(i3);
                 finish();
 
                 break;
-
+*/
 
             case R.id.RegisterButton:
                 Intent i2 = new Intent(MainActivity.this, SignIn.class);
@@ -213,6 +215,7 @@ String coordenadaText="";
                 startActivity(i2);
                 finish();
                 break;
+
             case R.id.CloseSesion:
                 Intent i = new Intent(MainActivity.this, MainActivity.class);
                 userId = -1;
@@ -228,6 +231,7 @@ String coordenadaText="";
                 finish();
 
                 break;
+
             case R.id.Btn_Sound:
                 if(mp.isPlaying()){
                     btn_Sound.setImageResource(R.drawable.play);
@@ -236,11 +240,23 @@ String coordenadaText="";
                     mp.start();
                     btn_Sound.setImageResource(R.drawable.pause);
                 }
+                break;
+
             case R.id.Btn_Track:
                 getLastLocation();
+                break;
 
+            case R.id.CallFamily:
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + dao.getPhone())));
+                getLastLocation();
+                break;
 
-
+            case R.id.CallPolice:
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "133")));
+                break;
         }
-    }
+    };
+
+
+
 };

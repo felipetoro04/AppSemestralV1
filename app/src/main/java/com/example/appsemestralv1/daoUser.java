@@ -27,7 +27,7 @@ public class  daoUser {
     }
 
     public boolean createUser(User user) {
-        if (search(user.getEmail()) == 0) {
+        //if (search(user.getEmail()) == 0) {
             ContentValues cv = new ContentValues();   //tipo de lista que contendra varios valores
             cv.put("name", user.getName());// asigname tag con el valor que nos retorne el objeto
             cv.put("rut", user.getRut());
@@ -38,14 +38,16 @@ public class  daoUser {
             cv.put("pass", user.getPassword());
 
             //return (conn.insert("users",null,cv) > 0);
-            if (conn.insert("users", null, cv) > 0) {
+            if (conn.update("users", cv, "id = 1", null) > 0) {
                 return true;
-            } else {
+            } else if(conn.insert("users", null ,cv) > 0) {
+                return true;
+            } else{
                 return false;
             }
-        }else{
+        /*}else{
             return  false;
-        }
+        }*/
 
     }
 
@@ -129,5 +131,12 @@ public class  daoUser {
             }
         }
         return null;
+    }
+    public String getPhone() {
+        User user = getUsers().get(0);
+        return  user.FonoContact;
+    }
+    public void cleanDataBase(){
+
     }
 }

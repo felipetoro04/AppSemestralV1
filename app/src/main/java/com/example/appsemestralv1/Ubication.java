@@ -17,8 +17,6 @@ public class Ubication {
 
     public Ubication(String coordenadas) {
         Coordenadas = coordenadas;
-
-
     }
 
     public int getId() {
