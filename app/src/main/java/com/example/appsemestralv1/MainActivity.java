@@ -148,7 +148,7 @@ String coordenadaText="";
                         int resultCode = getResultCode();
                         switch (resultCode) {
                             case Activity.RESULT_OK:
-                                Toast.makeText(getBaseContext(), "SMS sent", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getBaseContext(), "Mensaje enviado", Toast.LENGTH_LONG).show();
                                 break;
                             case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
                                 Toast.makeText(getBaseContext(), "Generic failure", Toast.LENGTH_LONG).show();
@@ -308,7 +308,7 @@ String coordenadaText="";
             case R.id.CallFamily:
                 //startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + dao.getPhone())));
                 getLastLocation();
-                String location = "NECESITO AYUDA! \"http://maps.google.co.in/maps?q=\"" + dao2.getLastLocation();
+                String location = "NECESITO AYUDA! \"http://maps.google.co.in/maps?q=" + dao2.getLastLocation();
                 String number = "56" + dao.getPhone();
                 sendSms(number, location);
                 Toast.makeText(this, "Mensaje Enviado", Toast.LENGTH_SHORT).show();
