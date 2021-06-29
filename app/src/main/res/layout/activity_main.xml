@@ -2,7 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
+    android:background="@drawable/fondo1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -14,8 +14,7 @@
         <ListView
             android:id="@+id/simpleListView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-             />
+            android:layout_height="match_parent" />
 
         <TextView
             android:id="@+id/NameApp"
@@ -33,7 +32,8 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="40dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito"/>
 
         <Button
             android:id="@+id/CallPolice"
@@ -47,7 +47,11 @@
             android:layout_marginBottom="3dp"
             android:background="@drawable/button_circle_two"
             android:text="LLAMAR POLICIA"
-            android:textColor="@color/cardview_dark_background"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"
+
             />
 
         <ImageButton
@@ -55,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="54dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="170dp"
             android:layout_marginRight="260dp"
             android:background="@drawable/button_circle_two"
             android:src="@drawable/play"/>
@@ -64,12 +68,15 @@
             android:id="@+id/Btn_Track"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginLeft="260dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="170dp"
             android:layout_marginRight="54dp"
             android:background="@drawable/button_circle_two"
             android:text="GUARDAR COORDENADA"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
 
 
 
@@ -82,13 +89,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="54dp"
             android:layout_marginLeft="54dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="240dp"
             android:layout_marginEnd="54dp"
             android:layout_marginRight="54dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/button_circle_two"
             android:text="VER HISTORIAL DE UBICACIONES"
-            android:textColor="@color/cardview_dark_background" />
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
 
 
@@ -135,7 +145,7 @@
             android:background="@drawable/button_circle_two"
             android:text="CERRAR SESION"
             android:visibility="gone"
-            android:textColor="@color/cardview_dark_background" />
+             />
 
 
         <Button
@@ -151,7 +161,10 @@
             android:background="@drawable/button_circle_two"
             android:text="Datos de Emergencia"
             android:visibility="visible"
-            android:textColor="@color/cardview_dark_background" />
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
 
         <TextView
             android:id="@+id/textView_email"
@@ -176,7 +189,9 @@
             android:layout_marginBottom="16dp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
-            android:text="Coordenadas"/>
+            android:text="Coordenadas"
+            android:visibility="gone"
+            />
 
         <TextView
             android:id="@+id/textView2"
@@ -188,7 +203,8 @@
             android:layout_marginEnd="54dp"
             android:layout_marginBottom="16dp"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:visibility="gone"/>
 
 
     </RelativeLayout>

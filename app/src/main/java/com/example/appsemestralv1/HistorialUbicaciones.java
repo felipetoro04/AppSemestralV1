@@ -32,7 +32,7 @@ public class HistorialUbicaciones extends AppCompatActivity implements View.OnCl
         List<Ubication> countryList = dao2.getUbications();
         List<String> coordenadasParseadas  = new ArrayList();
         for (int i = 0;i < countryList.size(); i++){
-            coordenadasParseadas.add(countryList.get(i).Coordenadas);
+            coordenadasParseadas.add(i+"-. "+ "http://maps.google.co.in/maps?q=" + countryList.get(i).Coordenadas);
         }
         simpleList = (ListView)findViewById(R.id.simpleListView);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_historial_ubicaciones,

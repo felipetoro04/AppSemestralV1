@@ -3,14 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@color/white">
+    android:background="@color/rojodani"
+    >
 
 
     <TextView
         android:id="@+id/textView"
         android:textColor="@color/black"
+        android:textSize="14dp"
+        android:paddingTop="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:textColorLink="@color/black"
+        />
+
+
+        android:fontFamily="@font/nunito"/>
 
     <ListView
         android:id="@+id/simpleListView"

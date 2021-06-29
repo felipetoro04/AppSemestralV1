@@ -205,7 +205,7 @@ String coordenadaText="";
                     Log.d(TAG, "onSuccess: " + location.getLatitude());
                     Log.d(TAG, "onSuccess: " + location.getLongitude());
 
-                    String text = location.getLatitude() +", " + location.getLongitude();
+                    String text = location.getLatitude() +","+ location.getLongitude();
                     coordenadaText = text;
                     Coordenadas.setText(coordenadaText);
                     Ubication ubication = new Ubication();
@@ -308,7 +308,7 @@ String coordenadaText="";
             case R.id.CallFamily:
                 //startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + dao.getPhone())));
                 getLastLocation();
-                String location = "NECESITO AYUDA! https://maps.google.com/maps?ll=" + dao2.getLastLocation().replace(" ","") + ",&amp;z=16&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3";
+                String location = "NECESITO AYUDA! \"http://maps.google.co.in/maps?q=\"" + dao2.getLastLocation();
                 String number = "56" + dao.getPhone();
                 sendSms(number, location);
                 Toast.makeText(this, "Mensaje Enviado", Toast.LENGTH_SHORT).show();
