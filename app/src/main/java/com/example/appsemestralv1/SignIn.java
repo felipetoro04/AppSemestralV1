@@ -29,10 +29,10 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         fonoContact = (EditText) findViewById(R.id.SignFonoContact);
         pass = (EditText) findViewById(R.id.SignPass);
         saveButton = (Button) findViewById(R.id.SaveButton);
-        cancelButton = (Button) findViewById(R.id.CancelSignButton);
+        //cancelButton = (Button) findViewById(R.id.CancelSignButton);
         dao = new daoUser(this);
         saveButton.setOnClickListener(this);
-        cancelButton.setOnClickListener(this);
+        //cancelButton.setOnClickListener(this);
 
     }
 
@@ -98,13 +98,23 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
                 break;
 
-            case R.id.CancelSignButton:
+
+            /**case R.id.CancelSignButton:
                 Intent i2 = new Intent(SignIn.this, MainActivity.class);
                 startActivity(i2);
-                finish();
+                finish();/**/
 
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent (SignIn.this,MainActivity.class);
+        startActivity(i);
+        finish();
+
+    }
+
 }
 
 

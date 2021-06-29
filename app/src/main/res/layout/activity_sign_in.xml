@@ -14,7 +14,7 @@
         android:id="@+id/textViewTittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="0dp"
         android:gravity="center_horizontal"
         android:text="REGISTRO DE USUARIO"
@@ -290,24 +290,28 @@
     <Button
         android:id="@+id/SaveButton"
         android:layout_width="193dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="650dp"
-        android:layout_marginLeft="210dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="640dp"
+        android:layout_marginLeft="50px"
+        android:textStyle="bold"
         android:text="GUARDAR"
         android:textColor="@color/black"
         android:fontFamily="@font/nunito"
-        android:background="@drawable/button_circle_two"/>
+        android:background="@drawable/button_circle_two"
+        android:layout_centerHorizontal="true"/>
 
-    <Button
+
+    <!--<Button
         android:id="@+id/CancelSignButton"
         android:layout_width="193dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="650dp"
-        android:layout_marginLeft="10dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="640dp"
+        android:gravity="center_horizontal"
+
         android:text="CANCELAR"
         android:background="@drawable/button_circle_two"
         android:textColor="@color/black"
-        android:fontFamily="@font/nunito"/>
+        android:fontFamily="@font/nunito"/>-->
 
 
 </RelativeLayout>
